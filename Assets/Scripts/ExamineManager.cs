@@ -26,7 +26,7 @@ public class ExamineManager : MonoBehaviour
                 Touch touch = Input.GetTouch(0);
                 if(touch.phase == TouchPhase.Moved)
                 {
-                    _currentSelectedObject.transform.Rotate(touch.deltaPosition.x, touch.deltaPosition.y, 0);
+                    _currentSelectedObject.transform.Rotate(touch.deltaPosition.x, touch.deltaPosition.y, 0 * _rotateSpeed);
                 }
             }
         }
