@@ -17,14 +17,16 @@ public class ExamineManager : MonoBehaviour
 
     bool _isExamining = false;
 
+    ExaminedObject _examiningObject;
+
     private void Update()
     {
-        if(_isExamining == true)
+        if (_isExamining == true)
         {
-            if(Input.touchCount > 0)
+            if (Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
-                if(touch.phase == TouchPhase.Moved)
+                if (touch.phase == TouchPhase.Moved)
                 {
                     _currentSelectedObject.transform.Rotate(touch.deltaPosition.x, touch.deltaPosition.y, 0 * _rotateSpeed);
                 }
@@ -69,15 +71,9 @@ public class ExamineManager : MonoBehaviour
         _isExamining = false;
     }
 
-
+    public void AnimationPlay()
+    {
+       _examiningObject = _currentSelectedObject.GetComponent<ExaminedObject>();
+       _examiningObject.PlayAnim();
+    }
 }
-
-
-
-/*for the examined object: i need to cache the examined objects original position, rotation, and scale. i need to adjust the size 
- *of the object when in examined mode and make it a child of the camera at the transform of the examined object.
- *i need a way to track the current selected object and update it when another object is selected. this will be so the examine 
- *button knows which button to go into examine mode with. 
- *also need the play button to know which item is in examine mode to or even just selected so it can play the right animation.
- *play button will use code to play an animation as well because each item has a different animation.
- */
