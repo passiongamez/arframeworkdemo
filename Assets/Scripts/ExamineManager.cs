@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.ARFoundation;
 
 public class ExamineManager : MonoBehaviour
 {
@@ -11,6 +12,11 @@ public class ExamineManager : MonoBehaviour
     Vector3 _originalScale;
 
     [SerializeField] GameObject _currentSelectedObject;
+    [SerializeField] GameObject _examineButton;
+    [SerializeField] GameObject _playButton;
+    [SerializeField] ARPlaneManager _planeManager;
+
+    [SerializeField] Canvas _uiElements;
 
     [SerializeField] float _rotateSpeed = 1f;
     [SerializeField] float _scaleOffset = .5f;
@@ -18,6 +24,11 @@ public class ExamineManager : MonoBehaviour
     bool _isExamining = false;
 
     ExaminedObject _examiningObject;
+
+    private void Start()
+    {
+        _planeManager = GameObject.Find("XR Origin").GetComponent<ARPlaneManager>();
+    }
 
     private void Update()
     {
@@ -64,9 +75,10 @@ public class ExamineManager : MonoBehaviour
 
     public void Unexamine()
     {
+        _currentSelectedObject.transform.parent = null;
         _currentSelectedObject.transform.position = _originalPos;
         _currentSelectedObject.transform.rotation = _originalRotation;
-        _currentSelectedObject.transform.localScale = _originalScale;
+        _currentSelectedObject.transform.localScale= _originalScale;
 
         _isExamining = false;
     }
@@ -75,5 +87,27 @@ public class ExamineManager : MonoBehaviour
     {
        _examiningObject = _currentSelectedObject.GetComponent<ExaminedObject>();
        _examiningObject.PlayAnim();
+    }
+
+    public void ButtonsActivate()
+    {
+        if (_planeManager != null)
+        {
+            _planeManager.enabled = true;
+        }
+        
+        _examineButton.gameObject.SetActive(true);
+        _playButton.gameObject.SetActive(true);
+    }
+
+    public void ButtonsDeactivate()
+    {
+        if (_planeManager != null)
+        {
+            _planeManager.enabled = false;
+        }
+
+        _examineButton.gameObject.SetActive(false);
+        _playButton.gameObject.SetActive(false);
     }
 }
