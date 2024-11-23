@@ -116,7 +116,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4515468758477680925}
   - {fileID: 8254791524576715620}
   - {fileID: 3983723169556798815}
   m_Father: {fileID: 7784672466190269467}
@@ -507,10 +506,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7987088103328441366}
+  - {fileID: 4515468758477680925}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3134579275420430844
@@ -638,7 +638,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -2934655021234537152}
         m_TargetAssemblyTypeName: DrivewayPrefabs, Assembly-CSharp
-        m_MethodName: OnSelect
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -653,7 +653,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -2934655021234537152}
         m_TargetAssemblyTypeName: DrivewayPrefabs, Assembly-CSharp
-        m_MethodName: Deselect
+        m_MethodName: OnDeselect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -980,13 +980,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8433603050100503059}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.000000081233, y: -1.2, z: -0}
-  m_LocalScale: {x: 1.4361, y: 1.4158, z: 0.5}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.0009999275, z: 0}
+  m_LocalScale: {x: 1.4361, y: 1.4157999, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4286211552079238423}
-  m_Father: {fileID: 7987088103328441366}
+  m_Father: {fileID: 7784672466190269467}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &8678576024985450770
 GameObject:

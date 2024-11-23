@@ -479,7 +479,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6131370315185332056}
         m_TargetAssemblyTypeName: DrivewayPrefabs, Assembly-CSharp
-        m_MethodName: OnSelect
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -494,7 +494,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6131370315185332056}
         m_TargetAssemblyTypeName: DrivewayPrefabs, Assembly-CSharp
-        m_MethodName: Deselect
+        m_MethodName: OnDeselect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
